@@ -1,0 +1,6 @@
+{
+  "name": "17_AI_Sentiment_Analyzer",
+  "category": "Business",
+  "description": "Classify sentiment and explain key emotional signals in feedback.",
+  "ai": "IBM watsonx.ai foundation model"
+}

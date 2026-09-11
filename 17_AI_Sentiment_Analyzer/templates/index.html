@@ -1,0 +1,8 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>{{title}}</title><link rel="stylesheet" href="/static/style.css"></head><body>
+<header><b>IBM watsonx.ai</b><span>Generative AI Project</span></header><main>
+<div class="hero"><h1>{{title}}</h1><p>Real generative AI powered by an IBM foundation model.</p></div>
+<section class="card"><textarea id="input" placeholder="Enter your task, text, notes, observations or data here..."></textarea><button onclick="run()">Generate with AI</button><div id="status"></div></section>
+<section class="card"><h2>AI Output</h2><pre id="out">Your AI result will appear here.</pre></section>
+</main><script>
+async function run(){let x=document.getElementById('input').value.trim();if(!x)return;document.getElementById('status').textContent='Calling IBM watsonx.ai...';let r=await fetch('/api/generate',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({input:x})});let d=await r.json();document.getElementById('out').textContent=d.result||d.error;document.getElementById('status').textContent='';}
+</script></body></html>
